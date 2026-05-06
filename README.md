@@ -25,7 +25,7 @@ A modern, full-stack **School Management System** built with React, Node.js, and
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hemantmaurya/schulrevive.git
+git clone https://github.com/hemantmaurya/Schul-Revive.git
 cd schulrevive
 ```
 ### 2. Start the Application
