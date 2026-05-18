@@ -1,9 +1,10 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 import initDatabase from "./config/initDb.js";
 import testingRoutes from "./routes/testing.routes.js";
+import academicRoutes from "./routes/academic.routes.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ initDatabase().catch(err => {
 
 // Routes
 app.use("/api/testing", testingRoutes);
+app.use("/api/academic", academicRoutes);   // ← Must be active
 
 // Health Check
 app.get("/health", (req, res) => {
@@ -35,15 +37,12 @@ app.get("/health", (req, res) => {
   });
 });
 
-// 404 Not Found
+// 404 Handler
 app.use((req, res) => {
-  res.status(404).json({ error: "Route not found" });
-});
-
-// Global Error Handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "Internal Server Error" });
+  res.status(404).json({ 
+    error: "Route not found",
+    path: req.path 
+  });
 });
 
 const PORT = process.env.PORT || 4000;
