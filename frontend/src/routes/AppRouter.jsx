@@ -10,6 +10,7 @@ import Classes from '../pages/Classes';
 import Attendance from '../pages/Attendance';
 import Exams from '../pages/Exams';
 import Fees from '../pages/Fees';
+import TestCRUD from "../pages/TestCRUD.jsx";
 
 export default function AppRouter() {
     return (
@@ -54,6 +55,11 @@ export default function AppRouter() {
                 <Route path="/fees" element={
                     <DashboardLayout title="Fees Management">
                         <Fees />
+                    </DashboardLayout>
+                } />
+                <Route path="/test-crud" element={
+                    <DashboardLayout title="Test CRUD Demo">
+                        <TestCRUD />
                     </DashboardLayout>
                 } />
             </Routes>

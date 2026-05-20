@@ -1,52 +1,35 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../config/database.js";
+// backend/src/models/Test.js
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
 
-const Test = sequelize.define("Test", {
+const Test = sequelize.define('Test', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     },
-    name: {
+    title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
-    middleName: {
-        type: DataTypes.STRING,
-        field: "middle_name",
-    },
-    lastName: {
-        type: DataTypes.STRING,
-        field: "last_name",
-    },
-    email: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false,
-    },
-    phone: {
-        type: DataTypes.STRING,
-    },
-    age: {
-        type: DataTypes.INTEGER,
-    },
-    isActive: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true,
-        field: "is_active",
-    },
-    notes: {
+    description: {
         type: DataTypes.TEXT,
+        allowNull: true
     },
-    deletedAt: {
-        type: DataTypes.DATE,
-        field: "deleted_at",
-        allowNull: true,
+    status: {
+        type: DataTypes.ENUM('Active', 'Inactive', 'Pending'),
+        defaultValue: 'Active'
     },
+    priority: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 }, {
-    timestamps: true,
-    paranoid: true,           // Enables soft delete
-    underscored: true,        // Use snake_case columns
+    timestamps: true
 });
 
 export default Test;
