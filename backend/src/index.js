@@ -9,6 +9,7 @@ import initDatabase from "./config/initDb.js";
 import testingRoutes from "./routes/testing.routes.js";
 import academicRoutes from "./routes/academic.routes.js";
 import testRoutes from './routes/testRoutes.js';
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use("/api/testing", testingRoutes);
 app.use("/api/academic", academicRoutes);
 app.use('/api/tests', testRoutes);
+app.use('/api/auth', authRoutes);
 
 // Health Check
 app.get("/health", (req, res) => {
