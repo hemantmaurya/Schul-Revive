@@ -4,6 +4,11 @@ import dotenv from "dotenv";
 
 import initDatabase from "./config/initDb.js";
 import testingRoutes from "./routes/testing.routes.js";
+import departmentRoutes from "./routes/department.route.js";
+import courseRoutes from "./routes/course.route.js";
+import subjectRoutes from "./routes/subject.route.js"
+import houseRoutes from "./routes/house.route.js"
+import classRoutes from "./routes/classSubject.route.js"
 
 dotenv.config();
 
@@ -24,6 +29,11 @@ initDatabase().catch(err => {
 
 // Routes
 app.use("/api/testing", testingRoutes);
+app.use("/api/departments", departmentRoutes);
+app.use("/api/courses", courseRoutes);
+app.use("/api/subjects", subjectRoutes);
+app.use("/api/houses", houseRoutes);
+app.use("/api/class", classRoutes);
 
 // Health Check
 app.get("/health", (req, res) => {
