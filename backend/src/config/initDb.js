@@ -1,7 +1,7 @@
 import sequelize from "./database.js";
 
 // Import your models here
-// import Test from "../models/Test.js";
+import Test from "../models/Test.js";
 // import Student from "../models/Student.js";
 
 const initDatabase = async () => {
