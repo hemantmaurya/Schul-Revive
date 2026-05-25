@@ -10,6 +10,7 @@ import testingRoutes from "./routes/testing.routes.js";
 import academicRoutes from "./routes/academic.routes.js";
 import testRoutes from './routes/testRoutes.js';
 import authRoutes from "./routes/authRoutes.js";
+import houseRoute from "./routes/house.route.js";
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use("/api/testing", testingRoutes);
 app.use("/api/academic", academicRoutes);
 app.use('/api/tests', testRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/houses', houseRoute);
 
 // Health Check
 app.get("/health", (req, res) => {

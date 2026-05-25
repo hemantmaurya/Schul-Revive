@@ -13,6 +13,7 @@ import Attendance from '../pages/Attendance';
 import Exams from '../pages/Exams';
 import Fees from '../pages/Fees';
 import TestCRUD from '../pages/TestCRUD';
+import House from '../pages/House';
 
 export default function AppRouter() {
     return (
@@ -71,6 +72,12 @@ export default function AppRouter() {
                         </DashboardLayout>
                     } />
                 </Route>
+                <Route path="/house" element={
+                    <DashboardLayout title="House CRUD">
+                        <House />
+                    </DashboardLayout>
+                } />
+
 
                 {/* Fallback Route */}
                 <Route path="*" element={<Navigate to="/login" replace />} />

@@ -1,5 +1,5 @@
 import sequelize from "./database.js";
-
+import House from "../models/House.js";
 // Import your models here
 import Test from "../models/Test.js";
 // import Student from "../models/Student.js";

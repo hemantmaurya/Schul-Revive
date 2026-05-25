@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import {
     Home, Users, UserCheck, School, BookOpen, Calendar,
-    Award, DollarSign, BarChart3, Settings, ChevronDown, ChevronRight
+    Award, DollarSign, BarChart3, Settings, ChevronDown, ChevronRight,
 } from 'lucide-react';
 
 const menuData = [
@@ -17,6 +17,7 @@ const menuData = [
         items: [
             { icon: Users, label: "Students", path: "/students", submenu: ["Student List", "Add Student"] },
             { icon: UserCheck, label: "Teachers", path: "/teachers", submenu: ["Teacher List", "Add Teacher"] },
+            { icon: School, label: "Add School Detail ",path:"/house" },
             { icon: School, label: "Classes", path: "/classes" },
             { icon: BookOpen, label: "Subjects", path: "/subjects" },
             { icon: Calendar, label: "Attendance", path: "/attendance" },
