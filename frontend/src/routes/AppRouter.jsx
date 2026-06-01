@@ -14,6 +14,7 @@ import Exams from '../pages/Exams';
 import Fees from '../pages/Fees';
 import TestCRUD from '../pages/TestCRUD';
 import House from '../pages/House';
+import AdmissionEnquiry from "../pages/Admissions/Enquiry.jsx";
 
 export default function AppRouter() {
     return (
@@ -75,6 +76,12 @@ export default function AppRouter() {
                 <Route path="/house" element={
                     <DashboardLayout title="House CRUD">
                         <House />
+                    </DashboardLayout>
+                } />
+
+                <Route path="/admissions/enquiry" element={
+                    <DashboardLayout title="Admission Enquiry">
+                        <AdmissionEnquiry />
                     </DashboardLayout>
                 } />
 

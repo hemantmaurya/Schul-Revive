@@ -11,6 +11,7 @@ import academicRoutes from "./routes/academic.routes.js";
 import testRoutes from './routes/testRoutes.js';
 import authRoutes from "./routes/authRoutes.js";
 import houseRoute from "./routes/house.route.js";
+import enquiryRoutes from './routes/enquiryRoutes.js';
 
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.use("/api/academic", academicRoutes);
 app.use('/api/tests', testRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/houses', houseRoute);
+app.use('/api/enquiries', enquiryRoutes);
 
 // Health Check
 app.get("/health", (req, res) => {
